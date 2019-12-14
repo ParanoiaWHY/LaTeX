@@ -1,12 +1,12 @@
 # Fdb version 3
-["xdvipdfmx"] 1576246706 "The Medical Ethics.xdv" "The Medical Ethics.pdf" "The Medical Ethics" 1576246707
-  "The Medical Ethics.xdv" 1576246706 78820 bcad3678677c2b5210b5afe362461449 "xelatex"
+["xdvipdfmx"] 1576313343 "The Medical Ethics.xdv" "The Medical Ethics.pdf" "The Medical Ethics" 1576313344
+  "The Medical Ethics.xdv" 1576313343 78820 52e7b8ae4178267a3a73d74890a560db "xelatex"
   (generated)
   "The Medical Ethics.pdf"
-["xelatex"] 1576246704 "f:/code/LaTeX/The Medical Ethics.tex" "The Medical Ethics.xdv" "The Medical Ethics" 1576246707
-  "The Medical Ethics.aux" 1576246706 354 05bca7d80324ea42f6aa0488f5b3ba10 "xelatex"
-  "The Medical Ethics.tex" 1576246624 19376 0eea1e3fb7ea9f033716c17727111c9a ""
-  "The Medical Ethics.toc" 1576246706 131 c3de7d2e72cc6ce599318f19ea845631 "xelatex"
+["xelatex"] 1576313341 "f:/code/LaTeX/The Medical Ethics.tex" "The Medical Ethics.xdv" "The Medical Ethics" 1576313344
+  "The Medical Ethics.aux" 1576313343 354 05bca7d80324ea42f6aa0488f5b3ba10 "xelatex"
+  "The Medical Ethics.tex" 1576313340 19376 b128e06bdfa11f57cfa7bbdfcd13cf90 ""
+  "The Medical Ethics.toc" 1576313343 131 c3de7d2e72cc6ce599318f19ea845631 "xelatex"
   "c:/Windows/Fonts/msyh.ttc" 1536996512 19647736 ff2e53a6131130a07589812ea5b5b0d0 ""
   "d:/TexLive/2019/texmf-dist/fonts/map/fontname/texfonts.map" 1563805104 3332 103109f5612ad95229751940c61aada0 ""
   "d:/TexLive/2019/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm" 1563804419 1528 abec98dbc43e172678c11b3b9031252a ""
@@ -77,10 +77,10 @@
   "d:/TexLive/2019/texmf-dist/web2c/texmf.cnf" 1563805535 35430 ca24fb44b873d21ac4c63d01600decd4 ""
   "d:/TexLive/2019/texmf-var/web2c/xetex/xelatex.fmt" 1563807636 3750151 ed8128db53c8583ee20722e395271343 ""
   "d:/TexLive/2019/texmf.cnf" 1563807527 673 4ae7b2f49cee444c5343a45b5d0f169c ""
-  "f:/code/LaTeX/The Medical Ethics.tex" 1576246624 19376 0eea1e3fb7ea9f033716c17727111c9a ""
+  "f:/code/LaTeX/The Medical Ethics.tex" 1576313340 19376 b128e06bdfa11f57cfa7bbdfcd13cf90 ""
   "nul" 0 0 d41d8cd98f00b204e9800998ecf8427e ""
   (generated)
-  "The Medical Ethics.aux"
   "The Medical Ethics.xdv"
-  "The Medical Ethics.toc"
   "The Medical Ethics.log"
+  "The Medical Ethics.toc"
+  "The Medical Ethics.aux"
