@@ -1,0 +1,4 @@
+\babel@toc {english}{}
+\contentsline {chapter}{Act 1}{1}% 
+\contentsline {chapter}{Act 2}{4}% 
+\contentsline {chapter}{Act 3}{8}% 

@@ -1,0 +1,293 @@
+% This templete is obtained from http://kevindonnelly.org.uk/resources/playscript.tex
+
+\documentclass[11pt,a4paper,oneside]{memoir}  % http://www.ctan.org/tex-archive/macros/latex/contrib/memoir
+\usepackage[english]{babel}
+%\usepackage[utf8]{inputenc}
+\usepackage{enumitem}  % http://www.ctan.org/tex-archive/macros/latex/contrib/enumitem
+\usepackage{ctex}
+
+\newlength{\drop}  % Without this, the title page will not compile correctly.
+% To avoid using drop, see: http://wiki.lyx.org/LyX/UsingMemoirInLyX
+
+\chapterstyle{demo2}  % See p92 of the Memoir manual.
+
+\pagestyle{myheadings}
+
+\setlength{\parindent}{0pt}
+
+\renewcommand{\printtoctitle}[1]{\centering\Large\bfseries Acts}  % Set the title of the contents page.
+% \renewcommand{\printtoctitle}[1]  % Remove the title from the contents page entirely.
+
+\pagenumbering{gobble} % Remove page numbers until told otherwise.
+
+% Various title pages may be used with the memoir package.  The one below is from ``Some Examples of Title Pages'' \textit{Peter Wilson} at http://www.ctan.org/tex-archive/info/latex-samples/TitlePages.
+
+% Set up the title page.
+\newcommand*{\titleGM}{\begingroup% Gentle Madness title page style
+  \drop = 0.1\textheight
+  \vspace*{\baselineskip}
+  \vfill
+  \hbox{%
+    \hspace*{0.2\textwidth}%
+    \rule{1pt}{\textheight}
+    \hspace*{0.05\textwidth}%
+    \parbox[b]{0.75\textwidth}{
+      \vbox{%
+        % Main title of the play主标题
+        \vspace{\drop}{\noindent\HUGE\bfseries The Medical Ethics}\\
+        %\vspace{\drop}{\noindent\HUGE\bfseries Title of the play \\[0.5\baselineskip] over two lines}\\
+        % Subtitle of the play副标题
+        [2\baselineskip]{\huge\itshape A Comedy about Doctor and Patient Relationship}\\
+        %[2\baselineskip]{\Large\itshape Subtitle of the play \\[0.5\baselineskip] over two lines}\\
+        % Author of the play
+        [4\baselineskip]{\Large Paranoia}\par\vspace{0.5\textheight}
+        %[4\baselineskip]{\Large First Author \\[0.5\baselineskip] Second Author \\[0.5\baselineskip] Third Author \\}\par\vspace{0.5\textheight}
+        % Publisher and year of publication
+        {\noindent \textbf{HNU} \\[0.5\baselineskip] \textbf{\today}}\\
+        [\baselineskip]
+      }% end of vbox
+    }% end of parbox
+  }% end of hbox
+  \vfill
+  \null
+  \endgroup}
+
+\begin{document}
+  
+  % Print out the title page.
+  \titleGM
+  \pagenumbering{roman} % Start numbering pages with Roman numerals \textit{for the front matter}.
+  
+  % Print out the contents page, listing the acts of the play.
+  % You will need to run pdflatex twice before the page numbers show up.
+  \tableofcontents*
+  \clearpage
+  
+  % Print out the characters page, listing the dramatis personae
+  % The starred form of \chapter prevents a chapter number \textit{eg ``One'', ``Two''} being printed before each chapter title \textit{eg ``Characters'', ``Act 1''}.
+  \chapter*{CHARACTERS}
+  \begin{center}  % Centre the list of characters.  Comment out this line and \end{}center if centring is not desired.
+    \textbf{病人A}: 一个男病人,最近被确诊患有极罕见的遗传病。 \\
+    \textbf{小B}: 病人A的妻子,深爱着病人A,在手术前后与其发生过较激烈的争执。 \\
+    \textbf{医生C}: 病人A的主治医生C,擅长基因工程手术,曾救治过多位病人并取得良好效果,在医界颇负盛名。 \\
+    \textbf{邻居D}: 病人A的邻居D,他是一位孤寡老人。 \\
+    \vskip 1cm
+    
+    \textbf{Scene}: 医院.
+    \textbf{Time of action}: 100年后的2199年1月23日.
+  \end{center}
+  
+  % Print out a page with any additional authorial comments, notes on staging, or whatever.
+  \chapter*{PREFACE, NOTES, WHATEVER}
+  
+  % Set up a description list to hold the paragraphs.  Increase the space between the list items, and set the left margin to 0.20cm
+  \begin{description}[itemsep=1ex,leftmargin=0.20cm]
+    
+    % Precede each paragraph with an empty \item[].
+    \item[] 基因工程,也称基因改造或基因操控,是利用生物技术在分子水平上对生物体基因的直接操作。可用于治疗单基因缺陷隐形遗传病。
+
+    %\item[] With regard to some particular passages which seemed generally disliked, I confess that if I felt any emotion of surprise at the disapprobation, it was not that they were disapproved of, but that I had not before perceived that they deserved it.
+    
+  \end{description}
+  
+  \clearpage
+  \pagenumbering{arabic}  % Start numbering pages with Arabic numerals \textit{for the text of the play}.
+  
+  % Generate a running header with the title of the play.
+  \markright{\textsc{The Medical Ethics}}
+  
+  %%%%%%%%%%%%%%%%
+  \chapter*{ACT 1}
+  %%%%%%%%%%%%%%%%
+  % The \chapter* will prevent the the chapters \textit{Acts} being listed in the table of contents, so we need to add them manually.
+  \addcontentsline{toc}{chapter}{Act 1}
+  
+  % The starred form of \section prevents a section number \textit{eg ``1.1'', ``2.3''} being printed before each section title \textit{eg ``Scene 1'', ``Scene 2''}.
+  \section*{\textit{SCENE 1}}
+  %\section*{\hfill\textit{SCENE 1}}  % Use this line instead if you want the Scene 1 heading shifted to the right edge of the page.
+  
+  % Set up a description list to hold the dialogue of the scene.  Increase the space between the list items, and set the left margin to 1cm.
+  \begin{description}[itemsep=1ex,leftmargin=1cm]
+    
+    % Where the scene or act begins with stage directions:
+    \item[] \hfill \\
+    \textit{100年后的2199年1月23日\textup{XX}医院的病房里,正值黄昏时分,一束柔和而温暖的阳光斜照进病房。\textit{镜头切换}病人\textup{A}正躺在病床上,在一旁的还有他的爱人---小\textup{B}。前不久,\textup{A}被诊断出某种极其罕见的新型遗传病,
+    他不仅全身无力,几乎不能站立,说话不清,无论怎样也说不清楚,在旁人听来一个字也听不懂,唯独他的爱人小\textup{B}能听懂---当然,这还得结合他的神情和手势。
+    \textup{A}目前正在病房接受进一步的观察,等待医生给出最终判断和诊断方案。}
+
+    \textit{背景音乐:轻柔\hspace{2em}和缓\hspace{2em}略悲伤。}
+
+    % Wrap each character's name in \item[].  Wrap in-dialogue directions in \textit{}
+    \item[病人A] \textit{用眼神示意小\textup{B},并辅以适当的手势:}我有点渴,想喝点水\footnote{凡病人A所言,均以字幕形式给出,并配以B站上视频里常见的的``鸟语"}。    
+    \item[小B] \textit{起身去倒了杯温水端到病床前,用汤匙一勺一勺的匀给\textup{A}喝。}
+
+    \textit{ \textup{A}喝了几口后,便轻轻地握着\textup{B}的手,仔细端详,过一会儿又紧紧的握住,仿佛害怕他的至爱---\textup{B}离他而去。嘴里还似有若无地嘟囔着些什么。}
+    \item[病人A] \textit{眼眶开始湿润,又说着些``鸟语"}你能不能出去一下,我想静静。    
+    \item[小B] \textit{起身走出病房,将要出门的时候,语气很轻地:}你要吃点什么,我去给你带上来\textit{顺手关门}。
+    \item[病人A] \textit{有点沮丧地想了想:}照旧吧,我随便吃点就好了。
+    \textit{旁白:\textup{A}时常把``随便"挂在嘴边,这倒不是因为他人很随便,而是一直以来\textup{A}说的``随便"小\textup{B}都能心领神会。}    
+    % Close the description list at the end of the scene.
+\end{description}
+\vskip 1cm  % Put a bit of space between this and the next scene heading.
+  
+  \section*{\textit{SCENE 2}}
+  \begin{description}[itemsep=1ex,leftmargin=1cm]
+    
+    % Where the scene or act begins with dialogue, and no stage directions:
+    \item[] \hfill
+    
+    \item[医生C] \textit{这时主治医生\textup{C}推门走了进来,略带凝重的表情:}我们刚才开会仔细讨论研究了您的病症,初步判断只能通过基因工程的方法对相关基因进行改造,以期达到减缓或治愈的目的。    
+    \item[病人A] 基因工程？会...会...会有什么弊端吗？\textit{将信将疑,略颤抖且激动}
+    \item[医生C] 这是现在唯一可行的方案了,除此之外再无其他,因为您这个病实属罕见,用基因工程是可以解决,至于弊端嘛...一切只有等到术后才能作进一步观察和判断,目前来看没有太大弊端,您大可放心。\textit{用手擦了下额头上的汗,表现出医生罕见的不自信}
+    \item[病人A] 我再和家人商量下吧,辛苦医生了。\textit{略带喜悦,喜形于色地}
+        
+    \textit{医生掩门而去。} 
+\end{description}
+\vskip 1cm
+
+\section*{\textit{SCENE3}}  
+\begin{description}[itemsep=1ex,leftmargin=1cm]
+    \setlength{\parskip}{5pt}
+    \item[] \hfill
+    
+    \item[小B] \textit{带了\textup{A}最爱吃的咖喱饭推门进来并虚掩门,一边喂给\textup{A}吃一边听\textup{A}讲述医生所言。}
+    \item[病人A] 刚才医生说有个基因工程的方法可以解决,我心里有点担心,想听听你的看法。
+    \item[小B] 是要对基因进行改造吗？我之前在生物课上听到过,目前这个基因工程的形势还不甚明朗,可能会有后遗症或者不可预见的后果,我觉得还是不要做这个手术吧,有点危险。\textit{首次矛盾始}
+    \item[病人A] 啊...如果是这样,那可如何是好？可是你也看到了,这不治也不行啊\textit{用手拍了拍腿部},我们一家还需要我,我不能给你们带来太多负担...\textit{自责,内疚}
+    \item[小B] 我也知道...我担心你嘛...还是不要做手术吧,我可以陪着你、照顾你,你不要有什么后顾之忧,如果有后遗症...我不敢想...还是别做手术了,听我的好不好？\textit{恳求语气,略急切}
+    \item[病人A] 不好,不管怎样手术肯定得做,就算有风险也比躺这里要好多了,你也知道老来了有多么可怕\textit{指邻居\textup{D}},我现在这状态和老了有什么分别,我不想过这种生活,手术一定要做,而且医生也说了没太大弊端,听医生的吧。\textit{倔强而坚决}
+    \item[小B] 可是我担心...万一你出事了我怎么办...你现在这样至少人还是完整的,谁也不知道术后会发生什么...你听我的不要去做这个手术好吗\textit{带哭腔,有点哽咽}
+    \item[病人A] 不行,就算你不同意我也要做这个手术,你听我的,不会有什么事的,吉人自有天相嘛。
+    \item[小B] 那好吧,听你的,你再好好想想吧,我不干预了。\textit{拗不过,无奈的放弃争执}      
+\end{description}
+\vskip 1cm
+  
+  %%%%%%%%%%%%%%%%
+  \chapter*{ACT 2}
+  %%%%%%%%%%%%%%%%
+  \addcontentsline{toc}{chapter}{Act 2}
+  
+\section*{\hfill\textit{SCENE 1}}  % The \hfill will shift the scene heading to the right edge of the page.
+\begin{description}[itemsep=1ex,leftmargin=1cm]
+    \setlength{\parskip}{5pt}
+    \item[] \hfill
+
+    \textit{几天后的上午,病人\textup{A}躺在病床上,正在术前通知单上签字,小\textup{B}在一旁看着,心里有点不是滋味\textit{内心的恐惧无法驱散}。}  
+    \item[医生C] \textit{对病人\textup{A},严肃语气}你看下这上面有没有什么不清楚的地方,仔细看看,有问题就问我。    
+    \item[病人A] \textit{正在详细查看}没有问题,医生,这个签完了下午可以做手术吗？\textit{有点迫不及待,想逃离病房,想起身走动...}
+    \item[医生C] 嗯,是的,下午两点开始,到时候会安排好的,您只需要在这段时间内不要饮食就好。
+    \item[病人A和小B] \textit{异口同声}好的,医生,谢谢医生了。 
+    
+\end{description}
+\vskip 1cm
+
+\section*{\hfill\textit{SCENE 2}}
+\begin{description}[itemsep=1ex,leftmargin=1cm]
+    \setlength{\parskip}{5pt}
+    \item[] \hfill
+
+    \textit{手术过程略。手术完毕后,病人\textup{A}被送回病床,小\textup{B}在一旁照看。}    
+    \item[小B] 你现在有什么异常的感觉吗？有没有哪里不舒服？\textit{关切地}    
+    \item[病人A] 没什么感觉,和手术前好像是一样的。\textit{用手摸了摸全身上下}  
+    \item[小B] 没有就好,等医生来了问下什么时候可以见效。
+    \item[病人A] 嗯,你出去问问医生吧。
+    \item[小B] \textit{出去找医生\textup{C}}医生,请问这位病人手术后多久可以有所改观呢？
+    \item[医生C] 再等几天就应该可以了,再等等吧,一时半会儿也看不出什么。另外需要注意的是好好休息,
+    \item[小B] 谢谢医生。   
+    
+\end{description}
+\vskip 1cm
+
+\section*{\hfill\textit{SCENE 3}}
+\begin{description}[itemsep=1ex,leftmargin=1cm]
+    \setlength{\parskip}{5pt}
+    \item[] \hfill
+
+    \textit{几天后的早晨,病人\textup{A}睡醒了,小\textup{B}正在一旁照看。}
+    \item[病人A] 我怎么在病房里？诶,你是谁啊？我好像不认识你,你怎么在我旁边坐着,你到底是谁,你为何在这里？\textit{诧异,一连串反问,表现地很陌生}
+    \item[小B] \textit{伸手去摸了一下病人\textup{A}的额头,惊慌失措,开始跺脚}你怎么了？我和你在一起那么久了,你怎么会不认识我呢？\textit{露出苦涩的面容}你清醒点,你是不是没睡醒？
+    \textit{试图晃动病人\textup{A}的头部}
+    \item[病人A] 我不认识你,我真的不认识你,你快点走开,我一点也不认识你,快点,快点,快点\textit{恐慌而急切}
+    \item[小B] \textit{用手背拍了自己额头几下,懊悔不该同意做这个手术,没有强硬的劝阻\textup{A}}好...我走...我走...说着便一气之下甩门而去。    
+\end{description}
+\vskip 1cm
+
+\section*{\hfill\textit{SCENE 4}}
+\begin{description}[itemsep=1ex,leftmargin=1cm]
+    \setlength{\parskip}{5pt}
+    \item[] \hfill
+
+    \textit{小\textup{B}一气之下快步来到医生\textup{C}办公室门口,重重地敲门。}
+    \item[医生C] \textit{开门}你好,请问有什么事吗,A这几天怎么样,好点了没？
+    \item[小B] 你可别假惺惺了\textit{已失去理智},你自己好好去看看A现在怎么样了!!!他已经不认识我了\textit{说着便要拽着医生\textup{C}要去病房里}
+    \item[医生C] 别拽我,我会走!我之前说过的,没有谁能保证手术无任何风险,包括我,我也不行,当时是给你们有提到这一点,你们也同意了,也签字了...
+    这件事我没有责任,任何手术都是有风险的!\textit{刻意推卸责任}
+    \item[小B] \textit{叫天天不应叫地地不灵,无奈而又气愤}行了,你也别说这些了,你先去看看怎么办吧!快点!能不能快点啊？有你们这样工作的吗？\textit{边说边拽}
+    \item[医生C] 好好好,我去看看什么情况。\textit{小声bb:真晦气}\footnote{因为基因工程尚未完全攻破,目前所做手术都是凭经验,全靠人体试验,基本上没有大量案例有例可查,风险是自然存在的,故而医生C有此一bb。}
+\end{description}
+\vskip 1cm
+
+\section*{\hfill\textit{SCENE 5}}
+\begin{description}[itemsep=1ex,leftmargin=1cm]
+    \setlength{\parskip}{5pt}
+    \item[] \hfill
+
+    \textit{医生\textup{C}随小\textup{B}一同来到\textup{A}的病床旁。}
+    \item[医生C] \textit{靠近\textup{A}用手在\textup{A}面前挥了挥}认识我吗？知道我是谁吗？ 
+    \item[病人A] 认识啊,你不就是给我做手术的医生嘛,我怎么会不认识呢\textit{说完憨笑},医生有什么事要嘱咐吗？
+    \item[医生C] 那你认识她吗？\textit{用手指向小\textup{B},这时小\textup{B}低着头,又想抬起头,想听到``我认识啊"这四个字,但又害怕失望,最终还是低下了头。}
+    \item[病人A] 不认识,她怎么又来了,我一点也不认识她,你们能不能让她快点出去\textit{不耐烦,厌恶}
+    \item[医生C] \textit{小声地说}看来确实出了点问题...这样吧,你先休息着,我出去有点事。\textit{顺便喊上小\textup{B}}
+\end{description}
+\vskip 1cm
+
+\section*{\hfill\textit{SCENE 6}}
+\begin{description}[itemsep=1ex,leftmargin=1cm]
+    \setlength{\parskip}{5pt}
+    \item[] \hfill
+
+    \textit{医生\textup{C}和小\textup{B}来到医院会议室。}
+    \item[医生C] 这样吧,A现在这样了,也没有什么可以补救的,不过他马上可以下床走动了,慢慢会好起来的,只是...只是失忆...这个,我们也实在没办法了,
+    我去和医院领导商量下,给你们赔偿20W,你看如何？
+    \item[小B] 不行!我要去告你们。\textit{大声地}
+    \item[医生C] 你们签了术前通知单,法律只会站我们这边,你们没可能赢的。\textit{有恃无恐}
+    \item[小B] \textit{感到气愤不已}就算注定失败我也要告你们...你们把A还给我,他不认识我了,快还给我,早知道不来你们这里做手术了,一点都不可靠,
+    还想着息事宁人,告诉你们:不可能!这事儿还没完,你等我去告你们!
+    \item[医生C] \textit{耸耸肩}怎么,你是觉得钱少了？那25w？别幻想法律了,你们要是能赢,赔100W我们也愿意,现在白纸黑字,术前通知单里可什么都有呢,
+    你们别白费力气了,拿着这些钱就收着吧,我们也是为你们好...不要到时候官司打输了可就什么也没了。
+    \item[小B] \textit{气不打一处来}你们...你们太过分了,我不打官司,我去举报,我明天就去省委省政府,我还不信了,天底下没有能治你们的。算我们倒了八辈子的霉。
+    \textit{说着立刻走了出去,找了个走廊里的座位坐了下来,呆滞地坐着,一动也不动,仿佛失去了一切}
+\end{description}
+\vskip 1cm
+
+
+\chapter*{ACT 3}
+%%%%%%%%%%%%%%%%
+\addcontentsline{toc}{chapter}{Act 3}
+
+\section*{\hfill\textit{SCENE 1}}
+\begin{description}[itemsep=1ex,leftmargin=1cm]
+    \setlength{\parskip}{5pt}
+    \item[] \hfill
+
+    \textit{第二天,小\textup{B}在出门时碰到了邻居\textup{D}。}
+    \item[邻居D] (杵着拐杖)你好啊,小B,A的病手术后好了吗？ 
+    \item[小B] 别提了,糟糕透顶,他现在独独不认识我,医院那边想推脱责任,我现在愁死了...你说可咋办啊？
+    \item[邻居D] 怎么会这样,敢情这医院一点忙都没帮上,在帮倒忙啊!
+    \item[小B] 可不是嘛,我们还告不赢他们,我正准备去省里,跟领导反映反映。
+    \item[邻居D] 那确实应该去的,只能看看这样能不能行了...哎这医院真的不行,我上次老寒腿去这个医院没治好不说,还花了我好多钱,这几天又开始犯了(哎呦哎呦又开始疼了,哎呦,饶了我吧...)
+    \item[小B] 我扶您上楼去吧。(用手搀着\textup{D})待会儿我再出去。
+    \item[邻居D] 那多谢你了。跟你说,医院没几个好的,治治不好,你看A现在这样,不都是医院一手造成的,我看啊,还不如不治,跟我一样安稳度完一生不也挺好的,
+    也就是不能行动...总...总比比现在好吧!
+    \item[小B] 是啊,以后再也不上医院了\footnote{一年被蛇咬,十年怕井绳。},什么医院,简直就是祸害人。(呸)
+\end{description}
+\vskip 1cm
+
+\clearpage
+
+\Huge{预知后事如何,且听下回分解。}
+
+
+
+
+\end{document}
